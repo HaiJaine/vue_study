@@ -5,22 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01-vue快速入门</title>
+    <title>01-文本插值</title>
 </head>
 
 <body>
-    <!-- 视图 -->
     <div id="div">
-        {{msg}}
+        <div>{{msg}}</div>
+        <div v-html="msg"></div>
     </div>
 </body>
 <script src="js/vue.js"></script>
 <script>
-    //脚本
     new Vue({
         el: "#div",
         data: {
-            msg: "Hello Vue"
+            msg: "<b>Hello Vue</b>"
         }
     });
 </script>

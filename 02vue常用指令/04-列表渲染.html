@@ -5,22 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01-vue快速入门</title>
+    <title>04-列表渲染</title>
 </head>
 
 <body>
-    <!-- 视图 -->
     <div id="div">
-        {{msg}}
+        <ul>
+            <li v-for="name in names">{{name}}</li>
+            <li v-for="stu in student">{{stu}}</li>
+        </ul>
     </div>
 </body>
 <script src="js/vue.js"></script>
 <script>
-    //脚本
     new Vue({
         el: "#div",
         data: {
-            msg: "Hello Vue"
+            names: ["Tom", "Alice", "Mark", "Bob"],
+            student: {
+                name: "John",
+                age: 18
+            }
         }
     });
 </script>

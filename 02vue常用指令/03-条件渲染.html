@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01-vue快速入门</title>
+    <title>03-条件渲染</title>
 </head>
 
 <body>
-    <!-- 视图 -->
     <div id="div">
-        {{msg}}
+        <!-- 判断num的值，对3取余 余数为0显示div1,余数为1显示div2，余数为2显示div3 -->
+        <div v-if="num % 3 == 0">div1</div>
+        <div v-else-if="num % 3 == 1">div2</div>
+        <div v-else="num % 3 == 2">div3</div>
+
+        <div v-show="flag">div4</div>
     </div>
 </body>
 <script src="js/vue.js"></script>
 <script>
-    //脚本
     new Vue({
         el: "#div",
         data: {
-            msg: "Hello Vue"
+            num: 1,
+            flag: false
         }
     });
 </script>
